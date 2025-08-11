@@ -1,22 +1,11 @@
-public class Account {
+import java.io.Serializable;
+public class Account implements Serializable {
+    private int account;
+    private String First_Name,Last_Name;
     private double Balance;
-
-    public Account(double initialBalance) {
-        if (initialBalance > 0) {
-            Balance = initialBalance;
-
-        }
+    public Account(int acct,String first,String last,double bal )
+    {
+        this(0,""," ",0.0);
     }
 
-    public static void main(String[] args) {
-    }
-
-    public void credit(double Amount) {
-        Balance = Balance + Amount;
-
-    }
-
-    public double getBalance() {
-        return Balance;
-    }
 }

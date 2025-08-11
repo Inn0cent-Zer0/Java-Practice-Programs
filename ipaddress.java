@@ -1,22 +1,24 @@
-import java.util.*;
-import java.io.*;
-import java.net.*;
+import java.net.InetAddress;
 public class ipaddress {
-    public static void main(String[]args) throws IOException
+    public static void main(String[]args) throws Exception
     {
         InetAddress IP = InetAddress.getLocalHost();
-        System.out.println("\n\t\t|_|_||_|_|_|_|_|_|_|_| IP ADDRESS |_|_||_|_|_|_|_|_|_|_|_|_|");
-        System.out.println("\n\t\tThe IP Address of this Machine is "+IP.getHostAddress());
-        System.out.println("\n\t\t-----------------------------------------------------------\n");
-        IP = InetAddress.getByName("www.dagdushethganpati.com");
-        System.out.println("\n\t\tThe IP Address of this Dagdusheth Ganapthi Temple  is "+IP);
-        System.out.println("\n\t\t--------------------------------------------------------------------------------------------\n");
-        InetAddress[] ip = InetAddress.getAllByName("www.google.com");
-        System.out.print("\n\t\tThe IP Address of this Google  is ");
-        for (InetAddress inetAddress : ip) {
-            System.out.print(inetAddress);
-        }
-        System.out.println("\n\t\t-----------------------------------------------------------------------------------------------------------\n");
+        System.out.println("\n\t\t\t\t+_+_+_+_+_+_+||IP Address ||_+_+_+_+_+_+_+");
+        System.out.print("\n\t The IP(Interent Protocol) Address of this System is  : "+IP.getHostAddress());
+        System.out.print("\n\t ---------------------------------------------------------------------\n");
+        IP= InetAddress.getByName("www.dagdushethganpati.com");
+        System.out.print("\n\tThe IP(Interent Protocol) Address of Dagsusheth Ganpathi Temple  is : "+IP);
+        System.out.print("\n\t -------------------------------------------------------------------------------------------------------------\n");
+        IP= InetAddress.getByName("www.facebook.com");
+        System.out.print("\n\tThe IP(Interent Protocol) Address of Facebook  is : "+IP);
+        System.out.print("\n\t --------------------------------------------------------------------------------\n");
+        InetAddress[] Ip = InetAddress.getAllByName("www.google.com");
+        System.out.print("\n\t The IP(Interent Protocol) Address of Google  is  :   ");
 
+        for (int i=0; i< Ip.length; i++) {
+            System.out.print(Ip[i] + " ");
+        }
+        System.out.print("\n\t -----------------------------------------------------------------------------------\n");
     }
+
 }
