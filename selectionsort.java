@@ -1,32 +1,37 @@
 import java.util.*;
 public class selectionsort {
-    public static void main(String[]args) {
-        int a, N = 0;
-        int arr[] = new int[N];
-        N = arr.length;
-        Scanner scan = new Scanner(System.in);
-        System.out.println("\n\t\t+_+_+_+_+_+_//Bubble Sort//+_+_+_+_+_+_+");
-        System.out.println("\n\t\tEnter the numbers of values to be entered:");
-        a = scan.nextInt();
-        for (int i = 0; i <= a; i++) {
-            arr[i] = scan.nextInt();
+    public static void main(String[]args)
+    {
+        int i,j,N,r,pos,temp;
+        Scanner scan= new Scanner(System.in);
+        System.out.println("\n\t\tEnter the number of values to be entered :");
+        r= scan.nextInt();
+        System.out.println("\n\t\tEnter "+r+"  Values :");
+        int[] array = new int[r];
+        N= array.length;
+        for(i=0;i<N;i++)
+        {
+            array[i]= scan.nextInt();
         }
-
-        for (int i = 0; i <= arr.length - 1; i++) {
-            int small = i;
-            for (int j = 1; j < arr.length; j++) {
-                int temp;
-                if (small > arr[j]) {
-                    small = j;
+        for(i=0;i<N-1;i++){
+            pos = i;
+            for(j=i+1;j<N;j++){
+                if(array[j]<array[pos])
+                {
+                    pos =j;
                 }
-                temp = arr[small];
-                arr[small] = arr[i];
-                arr[i] = temp;
             }
-
+            temp = array[i];
+            array[i]= array[pos];
+            array[pos]=temp;
         }
-        for (int i = 1; i <= arr.length; i++) {
-            System.out.println(arr[i] + " ");
+        System.out.println("\n\t\t Array After Sorting");
+        System.out.print("{");
+        for(i=0;i<N;i++)
+        {
+            System.out.print(array[i]+" ");
+            System.out.print(",");
         }
+        System.out.print("}");
     }
 }
